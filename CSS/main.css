@@ -1,0 +1,371 @@
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('../ASSETS/font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf')
+         format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+:root {
+  --green: #285d49;
+  --green-dark: #1e4b3b;
+  --cream: #f2e7d2;
+  --orange: #d99b65;
+  --ink: #242424;
+  --page: #f4f4f4;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page-shell {
+  width: 100%;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 0 12px rgb(0 0 0 / 5%);
+  min-height: 100vh;
+}
+
+
+.brand {
+  display: block;
+  width: 74px;
+  flex: 0 0 auto;
+}
+
+.brand img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* ===== NAVBAR BARU ===== */
+
+.custom-navbar {
+  min-height: 76px;
+  padding: 8px 0;
+  background: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.brand-logo img {
+  display: block;
+  width: 66px;
+  height: 56px;
+  object-fit: contain;
+}
+
+/* Container menu */
+.nav-menu {
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  border: 1px solid #e7e7e7;
+  border-radius: 11px;
+}
+
+/* Tautan navbar */
+.nav-menu .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: #252525;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.nav-menu .nav-link:hover {
+  color: var(--green);
+}
+
+/* Menu aktif */
+.nav-menu .nav-link.active,
+.nav-menu .nav-link.active:hover {
+  color: #fff;
+  background: var(--green);
+}
+
+/* Ikon keranjang dan profil */
+.nav-menu .cart-link,
+.nav-menu .profile-link {
+  min-width: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 19px;
+}
+
+/* ===== RESPONSIVE NAVBAR ===== */
+
+@media (max-width: 767.98px) {
+  .custom-navbar {
+    min-height: 68px;
+    padding: 6px 0;
+  }
+
+  .brand-logo img {
+    width: 58px;
+    height: 50px;
+  }
+
+  .nav-menu {
+    align-items: stretch;
+    gap: 0;
+    margin-top: 10px;
+    padding: 8px;
+    border: 0;
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  .nav-menu .nav-link {
+    justify-content: flex-start;
+    padding: 10px 12px;
+  }
+
+  .nav-menu .cart-link,
+  .nav-menu .profile-link {
+    justify-content: flex-start;
+  }
+}
+
+/* ===== Hero ===== */
+
+.hero {
+  min-height: 275px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 32px 7%;
+  background: var(--cream);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  width: 53%;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.hero h1 {
+  margin: 0 0 9px;
+  color: var(--green);
+  font-size: 43px;
+  line-height: 0.98;
+  font-weight: 800;
+}
+
+.hero-description {
+  margin: 0 0 16px;
+  color: #4c5c4e;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.button {
+  display: inline-block;
+  padding: 9px 17px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.button-dark {
+  color: var(--white);
+  background: var(--green);
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.hero-image-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: right;
+}
+
+/* ===== Signature Cards ===== */
+
+.signature-section {
+  padding: 24px 6% 28px;
+  background: var(--green);
+}
+
+.signature-section h2 {
+  margin: 0 0 22px;
+  color: var(--orange);
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.signature-card {
+  min-width: 0;
+  overflow: hidden;
+  padding: 7px;
+  border-radius: 12px;
+  background: var(--white);
+  min-height: 200px;
+}
+
+.signature-card img {
+  width: 100%;
+  height: 160px;
+  border-radius: 7px;
+  object-fit: cover;
+  display: block;
+  background: #ffffff;
+  height: 200px;
+}
+
+.signature-card p {
+  margin: 7px 2px 2px;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+/* ===== Menu ===== */
+
+.menu-section {
+  padding: 22px 7% 50px;
+}
+
+.menu-heading {
+  margin: 0 0 28px;
+  color: var(--green);
+  text-align: center;
+  font-size: 31px;
+  line-height: 1.2;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.menu-heading span {
+  color: var(--orange);
+}
+
+.menu-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 82px;
+}
+
+.menu-column {
+  min-width: 0;
+}
+
+.menu-group {
+  margin-bottom: 30px;
+}
+
+.menu-group h3 {
+  margin: 0 0 7px;
+  color: var(--orange);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.menu-group ul {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-group li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 52px;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.menu-group li span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.buy-button {
+  width: 52px;
+  min-height: 20px;
+  padding: 2px 7px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--white);
+  background: var(--green);
+  font: inherit;
+  font-size: 10px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+/* ===== Footer ===== */
+
+.site-footer {
+  padding: 12px 16px;
+  color: var(--white);
+  background: var(--green);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 10px;
+}

@@ -1,0 +1,582 @@
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('../ASSETS/font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf')
+         format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+:root {
+    --green: #285d49;
+    --green-dark: #1e4b3b;
+    --green-button: #285d49;
+    --cream: #f2e7d2;
+    --page-bg: #f4f4f2;
+    --input-bg: #d3d3d3;
+    --text-dark: #262626;
+    --text-muted: #879d91;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--text-dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar {
+    min-height: 76px;
+    padding: 8px 0;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.brand-logo img {
+    display: block;
+    width: 66px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.nav-menu {
+    gap: 8px;
+    padding: 0;
+    border: 1px solid #e7e7e7;
+    border-radius: 11px;
+}
+
+.nav-menu .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    color: #252525;
+    font-size: 14px;
+    transition: color 0.2s ease;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.nav-menu .nav-link:hover {
+    color: var(--green);
+}
+
+.nav-menu .cart-link {
+    font-size: 19px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-register-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: transparent;
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    transition: none;
+}
+
+/* Halaman yang sedang aktif */
+.btn-register-nav.active,
+.btn-register-nav.active:hover,
+.btn-register-nav.active:focus {
+    background: var(--green);
+    color: #fff;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.register-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 540px;
+    background: var(--green);
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-panel {
+    position: relative;
+    min-width: 0;
+    min-height: 540px;
+    overflow: hidden;
+    background: #163d30;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.04) 42%,
+        rgba(0, 0, 0, 0.34) 100%
+    );
+}
+
+.hero-caption {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 42px 24px 18px;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-eyebrow {
+    margin: 0 0 7px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-caption h1 {
+    margin: 0;
+    font-size: clamp(27px, 3.3vw, 46px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.hero-description {
+    margin-top: 7px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.coffee-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    max-width: 310px;
+    margin-top: 42px;
+}
+
+.coffee-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border: 1px dashed rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.hero-footer {
+    margin: auto 0 0;
+    font-size: 10px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   REGISTER PANEL
+========================= */
+
+.form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 32px;
+    background: var(--green);
+}
+
+.register-card {
+    width: 100%;
+    max-width: 360px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f4f7f5;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.18);
+}
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 15px;
+    background: #fff;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.card-heading h2 {
+    margin: 0;
+    color: var(--green);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card-body-custom {
+    padding: 23px 25px 19px;
+}
+
+.form-group-custom {
+    margin-bottom: 13px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.custom-input {
+    width: 100%;
+    height: 39px;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--input-bg);
+    color: #333;
+    font-size: 11px;
+    box-shadow: none;
+}
+
+.custom-input::placeholder {
+    color: #777;
+    opacity: 1;
+}
+
+.custom-input:focus {
+    border-color: var(--green);
+    background: #e0e0e0;
+    box-shadow: 0 0 0 3px rgba(40, 93, 73, 0.12);
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper .custom-input {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #5b655f;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.toggle-password i {
+    font-size: 14px;
+}
+
+.password-hint {
+    margin-top: -8px;
+    margin-bottom: 13px;
+    padding-left: 5px;
+    color: var(--text-muted);
+    font-size: 9px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.field-error {
+    display: block;
+    min-height: 0;
+    margin: 4px 8px 0;
+    color: #b42318;
+    font-size: 10px;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.custom-input.is-invalid {
+    border-color: #b42318;
+    background-image: none;
+}
+
+.form-alert {
+    padding: 8px 11px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    font-size: 11px;
+}
+
+.btn-submit {
+    display: block;
+    width: 112px;
+    min-height: 34px;
+    margin: 16px auto 0;
+    border: none;
+    border-radius: 999px;
+    background: var(--green-button);
+    color: #fff;
+    font-size: 11px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.btn-submit:hover {
+    background: var(--green-dark);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-submit:focus-visible {
+    outline: 3px solid rgba(40, 93, 73, 0.3);
+    outline-offset: 3px;
+}
+
+.login-text a {
+    color: var(--green);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   CARD BRANDING
+========================= */
+
+.card-branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 50px;
+}
+
+.footer-logo {
+    width: 66px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.branding-divider {
+    width: 1px;
+    height: 27px;
+    background: #d8ded9;
+}
+
+.partner-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #333;
+    line-height: 1.25;
+}
+
+.partner-brand strong {
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.partner-brand small {
+    font-size: 7px;
+    color: #68756d;
+}
+
+.login-text {
+    margin-top: 5px;
+    text-align: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: var(--text-muted);
+    font-size: 9px;
+}
+
+.login-text p {
+    margin: 1px 0;
+}
+
+.login-text a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 767.98px) {
+    body {
+        padding: 10px;
+    }
+
+    .custom-navbar {
+        min-height: 68px;
+        padding: 6px 0;
+    }
+
+    .brand-logo img {
+        width: 58px;
+        height: 50px;
+    }
+
+    .nav-menu {
+        align-items: stretch !important;
+        gap: 0;
+        margin-top: 10px;
+        padding: 8px;
+        border: 0;
+        border-radius: 8px;
+        background: #fff;
+    }
+
+    .nav-menu .nav-link {
+        justify-content: flex-start;
+        padding: 10px 12px;
+    }
+
+    .nav-menu .cart-link {
+        justify-content: flex-start;
+    }
+
+    .btn-register-nav {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .register-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-panel {
+        min-height: 400px;
+    }
+
+    .hero-caption {
+        padding-top: 38px;
+    }
+
+    .hero-caption h1 {
+        font-size: clamp(32px, 7vw, 46px);
+    }
+
+    .coffee-labels {
+        margin-top: 30px;
+    }
+
+    .form-panel {
+        padding: 35px 20px;
+    }
+
+    .register-card {
+        max-width: 380px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .custom-navbar {
+        padding: 6px 4px;
+    }
+
+    .register-content {
+        min-height: auto;
+    }
+
+    .hero-panel {
+        min-height: 330px;
+    }
+
+    .hero-caption {
+        padding: 32px 18px 15px;
+    }
+
+    .hero-eyebrow {
+        font-size: 9px;
+    }
+
+    .hero-caption h1 {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        font-size: 10px;
+    }
+
+    .coffee-labels {
+        width: 85%;
+        margin-top: 24px;
+    }
+
+    .coffee-label {
+        width: 66px;
+        height: 66px;
+        font-size: 9px;
+    }
+
+    .form-panel {
+        padding: 28px 16px;
+    }
+
+    .card-body-custom {
+        padding: 22px 20px 18px;
+    }
+
+    .card-heading {
+        min-height: 55px;
+    }
+
+    .card-heading h2 {
+        font-size: 18px;
+    }
+}
