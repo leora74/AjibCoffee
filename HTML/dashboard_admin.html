@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin | AJIB Coffee</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../CSS/dashboard_admin.css">
+
+    <!-- Custom JavaScript -->
+    <script src="../JAVASCRIPT/dashboard_admin.js" defer></script>
+</head>
+
+<body>
+    <div class="dashboard-page">
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-md navbar-light custom-navbar">
+            <div class="container-fluid px-4 px-lg-5">
+
+                <!-- LOGO -->
+                <a class="navbar-brand brand-logo" href="#" aria-label="AJIB Coffee">
+                    <img
+                        src="../ASSETS/img/ajib_logo2.png"
+                        alt="Logo AJIB Coffee"
+                    >
+                </a>
+
+                <!-- TOGGLE MOBILE -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarAjib"
+                    aria-controls="navbarAjib"
+                    aria-expanded="false"
+                    aria-label="Buka navigasi"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- MENU NAVBAR -->
+                <div class="collapse navbar-collapse" id="navbarAjib">
+                    <ul class="navbar-nav ms-auto align-items-md-center nav-menu">
+
+                        <!-- DASHBOARD AKTIF -->
+                        <li class="nav-item">
+                            <a
+                                class="btn btn-register-nav active"
+                                href="#dashboard"
+                                aria-current="page"
+                            >
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <!-- NOTIFIKASI -->
+                        <li class="nav-item">
+                            <button
+                                class="nav-link icon-nav-button"
+                                type="button"
+                                id="notificationButton"
+                                aria-label="Notifikasi"
+                                title="Notifikasi"
+                            >
+                                <i class="bi bi-bell"></i>
+                                <span class="notification-dot"></span>
+                            </button>
+                        </li>
+
+                        <!-- PROFIL ADMIN -->
+                        <li class="nav-item">
+                            <button
+                                class="nav-link icon-nav-button"
+                                type="button"
+                                id="profileButton"
+                                aria-label="Profil admin"
+                                title="Profil admin"
+                            >
+                                <i class="bi bi-person-circle"></i>
+                            </button>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+<main class="dashboard-content">
+
+    <!-- Ringkasan Dashboard -->
+    <section class="summary-section">
+
+        <div class="summary-card">
+            <div class="summary-heading">
+                <i class="bi bi-wallet2"></i>
+                <span>Pendapatan</span>
+            </div>
+
+            <h3 id="totalPendapatan">Rp 0</h3>
+            <p id="infoPendapatan">Memuat data...</p>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-heading">
+                <i class="bi bi-receipt"></i>
+                <span>Total Pesanan</span>
+            </div>
+
+            <h3 id="totalPesanan">0</h3>
+            <p id="infoPesanan">Memuat data...</p>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-heading">
+                <i class="bi bi-person-fill"></i>
+                <span>Pelanggan</span>
+            </div>
+
+            <h3 id="totalPelanggan">0</h3>
+            <p id="infoPelanggan">Memuat data...</p>
+        </div>
+
+    </section>
+
+    <!-- Grafik Penjualan -->
+    <section class="sales-section">
+
+        <div class="sales-header">
+            <h3 id="chartTitle">Penjualan 7 Hari Terakhir</h3>
+
+            <select id="periodSelect">
+                <option value="7">7 Hari Terakhir</option>
+                <option value="30">30 Hari Terakhir</option>
+                <option value="90">90 Hari Terakhir</option>
+            </select>
+        </div>
+
+        <p id="chartMessage" class="chart-message">
+            Mengambil data dari database...
+        </p>
+
+        <div class="chart-wrapper">
+            <div id="yAxis" class="y-axis"></div>
+            <div id="barGroup" class="bar-group"></div>
+        </div>
+
+        <div class="sales-footer">
+            <span>
+                Total pendapatan periode ini:
+                <strong id="chartRevenue">Rp 0</strong>
+            </span>
+
+            <span>
+                Total pesanan:
+                <strong id="chartOrders">0</strong>
+            </span>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

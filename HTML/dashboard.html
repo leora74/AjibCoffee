@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin | AJIB Coffee</title>
+  <link rel="stylesheet" href="../CSS/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../JAVASCRIPT/script.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-page">
+    <header class="navbar">
+      <a class="brand" href="#" aria-label="AJIB Coffee">
+  <img
+    src="../ASSETS/img/ajib_logo2.png"
+    alt="Logo AJIB Coffee"
+    class="brand-logo"
+  >
+</a>
+
+      <nav class="nav-actions" aria-label="Navigasi">
+        <a href="#dashboard" class="nav-dashboard active">Dashboard</a>
+        <button class="icon-button" id="notificationButton" aria-label="Notifikasi" title="Notifikasi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg>
+          <span class="notification-dot"></span>
+        </button>
+        <button class="icon-button profile-button" id="profileButton" aria-label="Profil admin" title="Profil admin">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><circle cx="16" cy="11.5" r="4.5"/><path d="M7.5 25c1.7-4 4.5-6 8.5-6s6.8 2 8.5 6"/></svg>
+        </button>
+      </nav>
+
+      <div class="small-menu" id="notificationMenu" hidden>
+        <strong>Notifikasi</strong>
+        <p>Belum ada notifikasi baru.</p>
+      </div>
+      <div class="small-menu profile-menu" id="profileMenu" hidden>
+        <strong>Administrator</strong>
+        <p>Admin AJIB Coffee</p>
+        <button id="logoutButton">Keluar</button>
+      </div>
+    </header>
+
+    <main class="main-content" id="dashboard">
+      <section class="summary-band" aria-label="Ringkasan statistik">
+        <article class="summary-card">
+          <div class="summary-card-top">
+            <span class="summary-icon">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="26" height="21" rx="3"/><path d="M3 12h26M11 18c0 4 10 4 10 0"/></svg>
+            </span>
+            <span class="summary-title">Pendapatan</span>
+          </div>
+          <strong class="summary-value" id="revenueValue">Rp 900.000</strong>
+          <span class="summary-trend" id="revenueTrend">↑ 15% dari kemarin</span>
+        </article>
+
+        <article class="summary-card">
+          <div class="summary-card-top">
+            <span class="summary-icon">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 4h17l6 6v18H6z"/><path d="M11 14h12M11 19h8"/></svg>
+            </span>
+            <span class="summary-title">Total Pesanan</span>
+          </div>
+          <strong class="summary-value number-value" id="ordersValue">70</strong>
+          <span class="summary-trend" id="ordersTrend">↑ 15% dari kemarin</span>
+        </article>
+
+        <article class="summary-card">
+          <div class="summary-card-top">
+            <span class="summary-icon person-icon">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="9" r="5"/><path d="M6 27v-4c0-5 4-8 10-8s10 3 10 8v4z"/></svg>
+            </span>
+            <span class="summary-title">Pelanggan</span>
+          </div>
+          <strong class="summary-value number-value" id="customersValue">70</strong>
+          <span class="summary-trend" id="customersTrend">↑ 4% dari kemarin</span>
+        </article>
+      </section>
+
+      <section class="sales-panel" aria-labelledby="salesHeading">
+        <div class="sales-panel-header">
+          <h1 id="salesHeading">Penjualan <span id="periodHeading">7 Hari Terakhir</span></h1>
+          <label class="date-select-wrap">
+            <span class="visually-hidden">Pilih periode rekap</span>
+            <select id="periodSelect">
+              <option value="7">7 Hari Terakhir</option>
+              <option value="14">14 Hari Terakhir</option>
+              <option value="30">30 Hari Terakhir</option>
+              <option value="custom">Pilih Periode Tanggal</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="custom-dates" id="customDates" hidden>
+          <label>Mulai <input type="date" id="startDate"></label>
+          <label>Sampai <input type="date" id="endDate"></label>
+          <button type="button" id="applyDates">Terapkan</button>
+          <span class="date-error" id="dateError" role="alert"></span>
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="salesChart" aria-label="Grafik penjualan berdasarkan periode" role="img"></canvas>
+        </div>
+        <div class="sales-total-row">
+          <span>Total pendapatan periode ini: <strong id="periodRevenue">Rp 900.000</strong></span>
+          <span>Total pesanan: <strong id="periodOrders">70</strong></span>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

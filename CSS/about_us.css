@@ -1,0 +1,414 @@
+/* Navbar */
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 2px solid #dddddd;
+    min-height: 95px;
+    padding: 12px 5%;
+}
+
+.navbar-brand img {
+    width: 95px;
+}
+
+/* Menu desktop */
+.navbar .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 13px;
+    gap: 18px;
+    align-items: center;
+}
+
+.navbar .nav-link {
+    padding: 10px 16px;
+    color: #222222;
+    text-decoration: none;
+    border-radius: 9px;
+}
+
+.navbar .nav-link.active {
+    background-color: #285941;
+    color: #ffffff;
+}
+
+.navbar .nav-link:hover:not(.active) {
+    background-color: #e9f0ec;
+    color: #285941;
+}
+
+.navbar .nav-link i {
+    font-size: 20px;
+}
+
+/* Tampilan HP dan tablet kecil */
+@media (max-width: 767.98px) {
+    .navbar {
+        padding: 10px 16px;
+    }
+
+    /* Menu berubah menjadi vertikal */
+    .navbar .navbar-collapse {
+        flex-basis: 100%;
+        width: 100%;
+        padding-top: 12px;
+    }
+
+    .navbar .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #dddddd;
+        border-radius: 12px;
+        background-color: #ffffff;
+    }
+
+    .navbar .nav-link {
+        padding: 12px 14px;
+    }
+
+    /* Ikon hamburger */
+    .navbar .navbar-toggler {
+        border: 1px solid #285941;
+        padding: 6px 9px;
+    }
+
+    .navbar .navbar-toggler:focus {
+        box-shadow: 0 0 0 2px rgba(40, 89, 65, 0.2);
+    }
+}
+.about-section {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.about-intro h1 {
+    margin: 0 0 22px;
+    color: #a4774d;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 700;
+    line-height: 0.87;
+    letter-spacing: -1.5px;
+}
+
+.about-intro p {
+    max-width: 230px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-card {
+    padding: 12px 14px;
+    color: #ffffff;
+    background-color: #285941;
+    border-radius: 11px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.info-card h2 {
+    margin: 0 0 4px;
+    color: #d69a70;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   SLOGAN DAN STATISTIK
+========================= */
+
+.highlight-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 165px;
+    padding: 25px 0;
+    color: #ffffff;
+    background-color: #285941;
+    text-align: center;
+}
+
+.highlight-content {
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-content h2 {
+    margin: 0 0 8px;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 700;
+}
+
+.highlight-subtitle {
+    margin: 0;
+    font-size: 12px;
+}
+
+.statistics {
+    margin-top: 15px;
+}
+
+.stat-item h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.stat-item p {
+    margin: 0;
+    font-size: 12px;
+}
+
+
+/* =========================
+   GAMBAR KOPI DEKORASI
+========================= */
+
+.coffee-decoration {
+    position: absolute;
+    z-index: 3;
+    width: 180px;
+    height: auto;
+    pointer-events: none;
+}
+
+.coffee-left {
+    left: 0;
+    bottom: -3px;
+}
+
+.coffee-right {
+    right: 0;
+    bottom: -145px;
+    width: clamp(100px, 18vw, 165px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    position: relative;
+    background-color: #ffffff;
+}
+
+.footer-content {
+    min-height: 140px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 105px;
+    height: auto;
+}
+
+.footer-info h3 {
+    margin-bottom: 8px;
+    color: #285941;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.footer-info p {
+    margin-bottom: 5px;
+    color: #285941;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.footer-info i {
+    margin-right: 4px;
+}
+
+.footer-bottom {
+    padding: 8px 10px;
+    color: #ffffff;
+    background-color: #285941;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 767.98px) {
+
+    .about-section {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    .about-intro h1 {
+        font-size: clamp(32px, 6vw, 42px);
+    }
+
+    .about-intro p {
+        max-width: 100%;
+    }
+
+    .highlight-section {
+        min-height: 160px;
+    }
+
+    .coffee-right {
+        bottom: -90px;
+    }
+}
+
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 575.98px) {
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .navbar-brand img {
+        width: 65px;
+    }
+
+    .navbar .navbar-collapse {
+        padding-top: 10px;
+    }
+
+    .navbar .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 8px;
+        border: none;
+        border-radius: 10px;
+        background-color: #f7f9f7;
+    }
+
+    .navbar .nav-link {
+        justify-content: flex-start;
+        padding: 10px 12px;
+        text-align: left;
+    }
+
+    .about-section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .about-intro h1 {
+        font-size: 38px;
+        line-height: 0.9;
+    }
+
+    .about-intro p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .info-card {
+        padding: 13px;
+    }
+
+    .info-card h2 {
+        font-size: 17px;
+    }
+
+    .info-card p {
+        font-size: 12px;
+    }
+
+    .highlight-section {
+        min-height: 185px;
+        padding: 28px 8px;
+    }
+
+    .highlight-content h2 {
+        max-width: 300px;
+        margin: 0 auto 8px;
+        font-size: 17px;
+    }
+
+    .highlight-subtitle {
+        font-size: 10px;
+    }
+
+    .statistics {
+        margin-top: 18px;
+    }
+
+    .stat-item h3 {
+        font-size: 19px;
+    }
+
+    .stat-item p {
+        font-size: 10px;
+    }
+
+    .coffee-decoration {
+        width: 75px;
+    }
+
+    .coffee-left {
+        left: 0;
+        bottom: 0;
+    }
+
+    .coffee-right {
+        right: 0;
+        bottom: -55px;
+        width: 85px;
+    }
+
+    .footer-content {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .footer-logo img {
+        width: 85px;
+    }
+
+    .footer-info h3 {
+        font-size: 14px;
+    }
+
+    .footer-info p {
+        font-size: 10px;
+    }
+
+    .footer-bottom p {
+        font-size: 10px;
+    }
+}
+

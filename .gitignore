@@ -1,0 +1,19 @@
+# Composer dependencies
+/vendor/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Sensitive credentials
+credentials.json
+token.json
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

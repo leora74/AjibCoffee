@@ -1,0 +1,588 @@
+
+/* =========================
+   FONT
+========================= */
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('../ASSETS/font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf')
+         format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+/* =========================
+   ROOT
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --ajib-green: #285d46;
+    --ajib-green-dark: #174b31;
+    --ajib-green-bright: #28a66d;
+    --panel-gray: #f0f0f0;
+    --border: #d9d9dd;
+    --text: #191919;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #fff;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+select,
+input {
+    font: inherit;
+}
+
+button,
+select {
+    cursor: pointer;
+}
+
+/* =========================
+   DASHBOARD PAGE
+========================= */
+
+.dashboard-page {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 22px 28px;
+}
+
+/* =========================
+   NAVBAR
+   MENGIKUTI NAVBAR LOGIN
+========================= */
+
+.navbar {
+    width: 100%;
+    min-height: 76px;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: none;
+    position: relative;
+    background: #fff;
+    z-index: 10;
+}
+
+/* Logo */
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ajib-green-dark);
+    text-decoration: none;
+    width: auto;
+    margin: 0;
+    line-height: 1;
+}
+
+.brand-logo {
+    display: block;
+    width: 66px;
+    height: 56px;
+    object-fit: contain;
+    margin-left: 25px;
+}
+
+/* Menu navbar */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e7e7e7;
+    border-radius: 11px;
+    padding: 0;
+    min-height: auto;
+}
+
+/* Dashboard aktif */
+
+.nav-dashboard {
+    min-height: 0;
+    min-width: 72px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    background: #285d49;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+/* Ikon notifikasi dan profil */
+
+.icon-button {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    color: #252525;
+    position: relative;
+}
+
+.icon-button svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.profile-button svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5;
+}
+
+.icon-button:hover {
+    color: var(--ajib-green);
+}
+
+/* Titik notifikasi */
+
+.notification-dot {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #e66d5d;
+    border: 1px solid white;
+}
+
+/* Menu notifikasi dan profil */
+
+.small-menu {
+    position: absolute;
+    z-index: 20;
+    right: 25px;
+    top: 78px;
+    width: 220px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px #0002;
+    font-size: 12px;
+}
+
+.small-menu p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.small-menu button {
+    border: 0;
+    background: var(--ajib-green);
+    color: white;
+    border-radius: 5px;
+    padding: 7px 10px;
+}
+
+.profile-menu {
+    right: 15px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    padding: 5px 25px 30px;
+}
+
+/* =========================
+   RINGKASAN DASHBOARD
+========================= */
+
+.summary-band {
+    margin-top: 0;
+    min-height: 164px;
+    background: var(--ajib-green);
+    border-radius: 6px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(18px, 6.5vw, 72px);
+    box-shadow: 0 3px 4px #0002;
+}
+
+.summary-card {
+    min-height: 104px;
+    background: #fff;
+    border-radius: 13px;
+    padding: 10px 13px 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.summary-card-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.summary-icon {
+    width: 35px;
+    height: 35px;
+    flex: 0 0 35px;
+    display: grid;
+    place-items: center;
+}
+
+.summary-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: #111;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.person-icon svg {
+    fill: #050505;
+    stroke: #050505;
+}
+
+.summary-title {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.summary-value {
+    font-size: 15px;
+    font-weight: 400;
+    margin: 4px 0 10px;
+}
+
+.summary-value.number-value {
+    font-size: 27px;
+    line-height: 1;
+    margin: 3px 0 12px;
+}
+
+.summary-trend {
+    color: var(--ajib-green-bright);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* =========================
+   GRAFIK PENJUALAN
+========================= */
+
+.sales-panel {
+    background: var(--panel-gray);
+    border-radius: 6px;
+    margin-top: 17px;
+    padding: 14px 14px 13px;
+}
+
+.sales-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 9px;
+}
+
+.sales-panel h1 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.date-select-wrap select {
+    width: 173px;
+    max-width: 100%;
+    border: 1px solid #a8a8ad;
+    border-radius: 20px;
+    background: transparent;
+    padding: 6px 12px;
+    font-size: 10px;
+    color: #292929;
+    outline: none;
+}
+
+.date-select-wrap select:focus,
+.custom-dates input:focus {
+    border-color: var(--ajib-green);
+}
+
+/* Area grafik */
+
+.chart-wrap {
+    height: 250px;
+    width: 100%;
+    position: relative;
+}
+
+/* Ringkasan pendapatan */
+
+.sales-total-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 20px;
+    padding: 9px 5px 0;
+    font-size: 11px;
+    color: #555;
+}
+
+.sales-total-row strong {
+    color: #222;
+    margin-left: 4px;
+}
+
+/* Filter tanggal khusus */
+
+.custom-dates {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 10px;
+    margin: 12px 0;
+    font-size: 11px;
+}
+
+.custom-dates label {
+    display: grid;
+    gap: 5px;
+}
+
+.custom-dates input {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 7px;
+    background: #fff;
+}
+
+.custom-dates button {
+    background: var(--ajib-green);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+.date-error {
+    color: #b42318;
+    align-self: center;
+}
+
+/* =========================
+   VISUALLY HIDDEN
+========================= */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 767.98px) {
+
+    /* Navbar */
+
+    .navbar {
+        min-height: 68px;
+        padding: 6px 0;
+    }
+
+    .brand-logo {
+        width: 58px;
+        height: 50px;
+    }
+
+    .nav-actions {
+        gap: 0;
+        min-height: auto;
+    }
+
+    .nav-dashboard {
+        min-height: 0;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .icon-button {
+        width: 38px;
+        height: 42px;
+    }
+
+    .small-menu {
+        top: 75px;
+        right: 12px;
+    }
+
+    /* Konten dashboard */
+
+    .dashboard-page {
+        padding: 0 12px 20px;
+    }
+
+    .main-content {
+        padding: 8px 0 20px;
+    }
+
+    .summary-band {
+        padding: 18px 12px;
+        gap: 9px;
+        min-height: 130px;
+    }
+
+    .summary-card {
+        min-height: 103px;
+        padding: 8px 4px;
+    }
+
+    .summary-card-top {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .summary-icon {
+        height: 27px;
+    }
+
+    .summary-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .summary-title {
+        font-size: 10px;
+    }
+
+    .summary-value {
+        font-size: 11px;
+        margin: 5px 0;
+    }
+
+    .summary-value.number-value {
+        font-size: 22px;
+        margin: 5px 0;
+    }
+
+    .summary-trend {
+        font-size: 9px;
+        white-space: normal;
+    }
+
+    .sales-panel {
+        padding: 12px 9px;
+    }
+
+    .sales-panel-header {
+        align-items: flex-start;
+    }
+
+    .sales-panel h1 {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .date-select-wrap select {
+        width: 135px;
+        font-size: 9px;
+        padding: 6px 7px;
+    }
+
+    .chart-wrap {
+        height: 220px;
+    }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 6px 4px;
+    }
+
+    .nav-actions {
+        gap: 0;
+    }
+
+    .nav-dashboard {
+        font-size: 12px;
+        padding: 8px 9px;
+    }
+
+    .icon-button {
+        width: 32px;
+    }
+
+    .summary-band {
+        padding: 12px 7px;
+        gap: 6px;
+    }
+
+    .summary-title {
+        font-size: 9px;
+    }
+
+    .summary-trend {
+        font-size: 8px;
+    }
+
+    .sales-panel-header {
+        flex-direction: column;
+    }
+
+    .date-select-wrap,
+    .date-select-wrap select {
+        width: 100%;
+    }
+
+    .chart-wrap {
+        height: 200px;
+    }
+}
