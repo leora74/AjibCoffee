@@ -1,0 +1,108 @@
+/* =========================================
+   STYLING HALAMAN NOTIFIKASI
+   ========================================= */
+
+.notification-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.notification-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 24px;
+}
+
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #d9d9d9;
+  padding: 18px 24px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+  background-color: #cccccc;
+}
+
+.notification-item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.notification-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: #333;
+}
+
+.notification-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.notification-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+.notification-time {
+  font-size: 16px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* =========================================
+   CUSTOM NAVBAR: TOMBOL DASHBOARD & NOTIFIKASI
+   ========================================= */
+
+/* Pastikan Dashboard biasa tidak punya background hijau di halaman ini */
+.nav-dashboard {
+  background-color: transparent !important;
+  color: #1C4630 !important;
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.nav-dashboard:hover {
+  background-color: rgba(28, 70, 48, 0.1);
+}
+
+/* Ubah tombol Ikon Notifikasi aktif menjadi bentuk kapsul hijau menyerupai tombol Dashboard */
+.icon-button#notificationButton.active {
+  background-color: #1C4630 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.icon-button#notificationButton.active svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
