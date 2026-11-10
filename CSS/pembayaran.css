@@ -1,0 +1,371 @@
+/* pembayaran.css - halaman Metode Pembayaran dan Pembayaran QRIS */
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('../ASSETS/font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf')
+         format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+:root {
+    --green: #285d49;
+    --green-dark: #1e4b3b;
+    --cream: #f2e7d2;
+    --abu: #f3f2f2;
+    --ink: #242424;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.halaman-bayar {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--ink);
+    background: #fff;
+    font-family: 'Bricolage Grotesque', Arial, sans-serif;
+}
+
+/* ===== Band hijau + avatar ===== */
+
+.band-hijau {
+    height: 132px;
+    background: var(--green);
+}
+
+.band-isi {
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 720px);
+    margin: 0 auto;
+    padding: 14px 16px 0;
+}
+
+.avatar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    color: var(--green);
+    background: #fff;
+    font-size: 30px;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 25%);
+}
+
+.avatar-link:hover {
+    color: var(--green-dark);
+}
+
+/* ===== Konten utama ===== */
+
+.bayar-wrap {
+    width: min(100%, 560px);
+    margin: -70px auto 0;
+    padding: 0 16px 48px;
+}
+
+.halaman-qris .bayar-wrap {
+    width: min(100%, 720px);
+}
+
+/* ===== Kartu total ===== */
+
+.kartu-total {
+    padding: 14px 20px;
+    border-radius: 12px;
+    background: var(--abu);
+    box-shadow: 0 5px 9px rgb(0 0 0 / 28%);
+}
+
+.total-label {
+    color: #777;
+    font-size: 15px;
+}
+
+.total-nilai {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.order-id {
+    margin-top: 4px;
+    color: #777;
+    font-size: 12px;
+}
+
+/* Versi mendatar pada halaman QRIS */
+.kartu-total.mendatar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.mendatar .total-baris {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+
+.mendatar .total-nilai {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.kartu-kanan {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.hitung-mundur {
+    color: var(--green);
+    font-variant-numeric: tabular-nums;
+}
+
+.hitung-mundur.habis {
+    color: #b3392b;
+}
+
+/* ===== Pesan ===== */
+
+.pesan-halaman {
+    margin: 16px 0 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.pesan-error {
+    color: #9a3d2d;
+    background: #fff0ed;
+}
+
+.pesan-info,
+.pesan-sukses {
+    color: var(--green);
+    background: #e7f2ec;
+}
+
+/* ===== Halaman Metode Pembayaran ===== */
+
+.judul-metode {
+    margin: 34px 0 20px;
+    color: #777;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.grup-metode h2 {
+    margin: 0 0 8px;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.opsi-metode {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 13px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--abu);
+    box-shadow: 0 3px 5px rgb(0 0 0 / 25%);
+    color: var(--ink);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.opsi-metode:hover:not(:disabled) {
+    box-shadow: 0 5px 9px rgb(0 0 0 / 30%);
+    transform: translateY(-1px);
+}
+
+.opsi-metode:focus-visible,
+.tombol-status:focus-visible {
+    outline: 3px solid var(--cream);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--green);
+}
+
+.opsi-metode:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.opsi-teks {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.opsi-teks strong {
+    font-size: 14px;
+}
+
+.opsi-teks small {
+    color: #666;
+    font-size: 11px;
+}
+
+.tautan-kembali {
+    display: inline-block;
+    margin-top: 28px;
+    color: var(--green);
+    font-size: 13px;
+}
+
+/* Logo QRIS berupa teks bila file aset belum ada */
+.logo-qris-teks {
+    display: inline-block;
+    padding: 3px 8px;
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
+}
+
+/* ===== Halaman QRIS ===== */
+
+.qris-isi {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.qris-kiri img {
+    display: block;
+    width: 96px;
+    height: auto;
+}
+
+.qris-tengah {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 300px);
+    text-align: center;
+}
+
+.logo-qris {
+    margin-bottom: 10px;
+}
+
+.logo-qris img {
+    display: block;
+    height: 30px;
+    width: auto;
+}
+
+.qr-kotak {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    max-width: 100%;
+    min-height: 250px;
+}
+
+.qr-gambar {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.qr-memuat,
+.qr-gagal {
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.qr-gagal a {
+    color: var(--green);
+}
+
+.nmid {
+    margin: 6px 0 0;
+    color: #555;
+    font-size: 11px;
+}
+
+.tombol-status {
+    margin-top: 18px;
+    padding: 9px 24px;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    background: var(--green);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.tombol-status:hover:not(:disabled) {
+    background: var(--green-dark);
+}
+
+.tombol-status:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.info-status {
+    min-height: 18px;
+    margin: 10px 0 0;
+    color: #666;
+    font-size: 12px;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 575.98px) {
+    .band-hijau {
+        height: 120px;
+    }
+
+    .bayar-wrap {
+        margin-top: -62px;
+    }
+
+    .kartu-total.mendatar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .qris-isi {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 12px;
+        margin-top: 22px;
+    }
+
+    .qris-kiri img {
+        width: 80px;
+    }
+
+    .qris-kanan {
+        display: none;
+    }
+}
