@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifikasi | AJIB Coffee</title>
+  <!-- Memanggil CSS -->
+  <link rel="stylesheet" href="../CSS/dashboard.css">
+  <link rel="stylesheet" href="../CSS/notification.css">
+  <!-- Memanggil JS -->
+  <script src="../JAVASCRIPT/script.js" defer></script>
+  <script src="../JAVASCRIPT/notification.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-page">
+    <header class="navbar">
+      <a class="brand" href="dashboard.html" aria-label="AJIB Coffee">
+        <img
+          src="../ASSETS/img/ajib_logo2.png"
+          alt="Logo AJIB Coffee"
+          class="brand-logo"
+        >
+      </a>
+
+      <nav class="nav-actions" aria-label="Navigasi">
+        <!-- Tombol Dashboard (Normal, Tanpa Hijau) -->
+        <a href="dashboard.html" class="nav-dashboard">Dashboard</a>
+        
+        <!-- Tombol Notifikasi (Berbentuk Kapsul Hijau Menyerupai Dashboard) -->
+        <button class="icon-button active" id="notificationButton" aria-label="Notifikasi" title="Notifikasi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg>
+          <span class="notification-dot"></span>
+        </button>
+
+        <button class="icon-button profile-button" id="profileButton" aria-label="Profil admin" title="Profil admin">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><circle cx="16" cy="11.5" r="4.5"/><path d="M7.5 25c1.7-4 4.5-6 8.5-6s6.8 2 8.5 6"/></svg>
+        </button>
+      </nav>
+
+      <div class="small-menu" id="notificationMenu" hidden>
+        <strong>Notifikasi</strong>
+        <p>Pesanan Masuk</p>
+      </div>
+      <div class="small-menu profile-menu" id="profileMenu" hidden>
+        <strong>Administrator</strong>
+        <p>Admin AJIB Coffee</p>
+        <button id="logoutButton">Keluar</button>
+      </div>
+    </header>
+
+    <main class="main-content" id="notification-content">
+      <section class="notification-section" aria-labelledby="notificationHeading">
+        <h1 id="notificationHeading" class="notification-page-title">Pesanan Terbaru</h1>
+
+        <div class="notification-list" id="notificationList">
+          <article class="notification-item">
+            <div class="notification-item-left">
+              <span class="notification-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="notification-text">Pesanan Masuk</span>
+            </div>
+            <time class="notification-time" datetime="13:04">13:04</time>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
