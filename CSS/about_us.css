@@ -1,86 +1,120 @@
-/* Navbar */
-.navbar {
-    width: 100%;
-    background-color: #ffffff;
-    border-bottom: 2px solid #dddddd;
-    min-height: 95px;
-    padding: 12px 5%;
+/* Font dan warna dasar untuk navbar (sama dengan halaman lain) */
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('../ASSETS/font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf')
+         format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
 }
 
-.navbar-brand img {
-    width: 95px;
+:root {
+    --green: #285d49;
+    --green-dark: #1e4b3b;
+    --cream: #f2e7d2;
 }
 
-/* Menu desktop */
-.navbar .navbar-nav {
+/* ===== NAVBAR (disamakan dengan main.css) ===== */
+
+.custom-navbar {
+    min-height: 76px;
+    padding: 8px 0;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.brand-logo {
     display: flex;
-    flex-direction: row;
-    padding: 5px;
-    border: 1px solid #dddddd;
-    border-radius: 13px;
-    gap: 18px;
     align-items: center;
+    margin: 0;
 }
 
-.navbar .nav-link {
-    padding: 10px 16px;
-    color: #222222;
+.brand-logo img {
+    display: block;
+    width: 66px;
+    height: 56px;
+    object-fit: contain;
+}
+
+/* Container menu */
+.nav-menu {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    border: 1px solid #e7e7e7;
+    border-radius: 11px;
+}
+
+/* Tautan navbar */
+.nav-menu .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #252525;
+    font-size: 14px;
     text-decoration: none;
-    border-radius: 9px;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
-.navbar .nav-link.active {
-    background-color: #285941;
-    color: #ffffff;
+.nav-menu .nav-link:hover {
+    color: var(--green);
 }
 
-.navbar .nav-link:hover:not(.active) {
-    background-color: #e9f0ec;
-    color: #285941;
+/* Menu aktif */
+.nav-menu .nav-link.active,
+.nav-menu .nav-link.active:hover {
+    color: #fff;
+    background: var(--green);
 }
 
-.navbar .nav-link i {
-    font-size: 20px;
+/* Ikon keranjang dan profil */
+.nav-menu .cart-link,
+.nav-menu .profile-link {
+    min-width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 19px;
 }
 
-/* Tampilan HP dan tablet kecil */
+/* ===== RESPONSIVE NAVBAR ===== */
+
 @media (max-width: 767.98px) {
-    .navbar {
-        padding: 10px 16px;
+    .custom-navbar {
+        min-height: 68px;
+        padding: 6px 0;
     }
 
-    /* Menu berubah menjadi vertikal */
-    .navbar .navbar-collapse {
-        flex-basis: 100%;
-        width: 100%;
-        padding-top: 12px;
+    .brand-logo img {
+        width: 58px;
+        height: 50px;
     }
 
-    .navbar .navbar-nav {
-        flex-direction: column;
+    .nav-menu {
         align-items: stretch;
-        gap: 4px;
-        width: 100%;
+        gap: 0;
+        margin-top: 10px;
         padding: 8px;
-        border: 1px solid #dddddd;
-        border-radius: 12px;
-        background-color: #ffffff;
+        border: 0;
+        border-radius: 8px;
+        background: #fff;
     }
 
-    .navbar .nav-link {
-        padding: 12px 14px;
+    .nav-menu .nav-link {
+        justify-content: flex-start;
+        padding: 10px 12px;
     }
 
-    /* Ikon hamburger */
-    .navbar .navbar-toggler {
-        border: 1px solid #285941;
-        padding: 6px 9px;
-    }
-
-    .navbar .navbar-toggler:focus {
-        box-shadow: 0 0 0 2px rgba(40, 89, 65, 0.2);
+    .nav-menu .cart-link,
+    .nav-menu .profile-link {
+        justify-content: flex-start;
     }
 }
+
 .about-section {
     padding-top: 25px;
     padding-bottom: 25px;
@@ -93,6 +127,7 @@
     font-weight: 700;
     line-height: 0.87;
     letter-spacing: -1.5px;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .about-intro p {
@@ -100,12 +135,14 @@
     margin: 0;
     font-size: 13px;
     line-height: 2;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .info-card {
@@ -121,12 +158,14 @@
     color: #d69a70;
     font-size: 18px;
     font-weight: 700;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .info-card p {
     margin: 0;
     font-size: 12px;
     line-height: 1.8;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 
@@ -155,11 +194,13 @@
     margin: 0 0 8px;
     font-size: clamp(18px, 2.5vw, 24px);
     font-weight: 700;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .highlight-subtitle {
     margin: 0;
     font-size: 12px;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .statistics {
@@ -170,11 +211,13 @@
     margin: 0;
     font-size: 22px;
     font-weight: 700;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .stat-item p {
     margin: 0;
     font-size: 12px;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 
@@ -215,6 +258,7 @@
     min-height: 140px;
     padding-top: 25px;
     padding-bottom: 25px;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .footer-logo {
@@ -231,6 +275,7 @@
     color: #285941;
     font-size: 17px;
     font-weight: 700;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .footer-info p {
@@ -238,6 +283,7 @@
     color: #285941;
     font-size: 12px;
     overflow-wrap: anywhere;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .footer-info i {
@@ -255,6 +301,7 @@
     margin: 0;
     font-size: 11px;
     font-weight: 700;
+    font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 
@@ -293,33 +340,10 @@
 
 @media (max-width: 575.98px) {
 
-    .navbar {
-        min-height: 70px;
-    }
 
-    .navbar-brand img {
-        width: 65px;
-    }
 
-    .navbar .navbar-collapse {
-        padding-top: 10px;
-    }
 
-    .navbar .navbar-nav {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 4px;
-        padding: 8px;
-        border: none;
-        border-radius: 10px;
-        background-color: #f7f9f7;
-    }
 
-    .navbar .nav-link {
-        justify-content: flex-start;
-        padding: 10px 12px;
-        text-align: left;
-    }
 
     .about-section {
         padding-top: 20px;
@@ -412,3 +436,17 @@
     }
 }
 
+
+
+/* Seluruh teks pada halaman Tentang Kami menggunakan Bricolage Grotesque. */
+body,
+body *:not(.bi) {
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+input,
+button,
+select,
+textarea {
+    font: inherit;
+}

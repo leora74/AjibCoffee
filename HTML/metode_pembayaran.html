@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Pembayaran | Ajib Coffee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../CSS/pembayaran.css">
+</head>
+<body class="halaman-bayar">
+    <header class="band-hijau">
+        <div class="band-isi">
+            <a class="avatar-link" href="profile.html" aria-label="Profil akun">
+                <i class="bi bi-person-circle"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="bayar-wrap">
+        <section class="kartu-total" aria-label="Ringkasan pembayaran">
+            <div class="total-label">Total</div>
+            <div class="total-nilai" id="totalBayar">Rp -</div>
+            <div class="order-id">Order ID <span id="kodeOrder">#-</span></div>
+        </section>
+
+        <div id="pesanHalaman" role="alert" hidden></div>
+
+        <h1 class="judul-metode">Metode Pembayaran</h1>
+
+        <section class="grup-metode" aria-labelledby="judulEwallet">
+            <h2 id="judulEwallet">Pembayaran QRIS</h2>
+            <button type="button" class="opsi-metode" id="pilihQris">
+                <span class="logo-qris-teks" aria-hidden="true">QRIS</span>
+                <span class="opsi-teks">
+                    <strong>QRIS</strong>
+                    <small id="captionQris">Scan dengan e-wallet atau m-banking</small>
+                </span>
+                <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+        </section>
+
+        <a class="tautan-kembali" href="keranjang.html">Kembali ke Keranjang</a>
+    </main>
+
+    <script src="../JAVASCRIPT/bayar_umum.js"></script>
+    <script src="../JAVASCRIPT/metode_pembayaran.js"></script>
+</body>
+</html>

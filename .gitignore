@@ -1,19 +1,7 @@
-# Composer dependencies
+PHP/config_midtrans.php
 /vendor/
-
-# Environment and secrets
-.env
-.env.*
-!.env.example
-
-# Sensitive credentials
-credentials.json
-token.json
-
-# Logs
-*.log
-
-# OS files
-.DS_Store
-Thumbs.db
-desktop.ini
+/PHP/config_midtrans.php
+/PHP/midtrans_config.php
+/PHP/midtrans_config.php
+/PHP/tes_midtrans.php
+/.vscode/

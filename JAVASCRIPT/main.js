@@ -1,27 +1,23 @@
-// Ajib Coffee — halaman statis untuk latihan frontend.
-// Tombol sengaja belum menjalankan aksi, sesuai permintaan.
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Tandai tautan navigasi saat diklik (hanya efek visual).
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.forEach((item) => item.classList.remove("active"));
-      link.classList.add("active");
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            navLinks.forEach((item) => item.classList.remove("active"));
+            link.classList.add("active");
+        });
     });
-  });
 
-  // menambahkan alert di main page
-  const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("status") === "success") {
+        alert("Login berhasil! Selamat datang.");
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
 
-if (params.get("status") === "success") {
-    alert("Login berhasil! Selamat datang.");
-
-    window.history.replaceState(
-        {},
-        document.title,
-        window.location.pathname
-    );
-}
+    // Tombol Buy selalu menuju halaman detail berdasarkan ID menu.
+    document.querySelectorAll(".buy-button[data-menu-id]").forEach((button) => {
+        button.addEventListener("click", () => {
+            const idMenu = button.dataset.menuId;
+            window.location.href = `detail_produk.php?id_menu=${encodeURIComponent(idMenu)}`;
+        });
+    });
 });

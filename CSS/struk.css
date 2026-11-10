@@ -1,0 +1,234 @@
+/* Font dan warna dasar untuk navbar (sama dengan halaman lain) */
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('../ASSETS/font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf')
+         format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+:root {
+    --green: #285d49;
+    --green-dark: #1e4b3b;
+    --cream: #f2e7d2;
+}
+
+/* ===== NAVBAR (disamakan dengan main.css) ===== */
+
+.custom-navbar {
+    min-height: 76px;
+    padding: 8px 0;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.brand-logo img {
+    display: block;
+    width: 66px;
+    height: 56px;
+    object-fit: contain;
+}
+
+/* Container menu */
+.nav-menu {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    border: 1px solid #e7e7e7;
+    border-radius: 11px;
+}
+
+/* Tautan navbar */
+.nav-menu .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #252525;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.nav-menu .nav-link:hover {
+    color: var(--green);
+}
+
+/* Menu aktif */
+.nav-menu .nav-link.active,
+.nav-menu .nav-link.active:hover {
+    color: #fff;
+    background: var(--green);
+}
+
+/* Ikon keranjang dan profil */
+.nav-menu .cart-link,
+.nav-menu .profile-link {
+    min-width: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 19px;
+}
+
+/* ===== RESPONSIVE NAVBAR ===== */
+
+@media (max-width: 767.98px) {
+    .custom-navbar {
+        min-height: 68px;
+        padding: 6px 0;
+    }
+
+    .brand-logo img {
+        width: 58px;
+        height: 50px;
+    }
+
+    .nav-menu {
+        align-items: stretch;
+        gap: 0;
+        margin-top: 10px;
+        padding: 8px;
+        border: 0;
+        border-radius: 8px;
+        background: #fff;
+    }
+
+    .nav-menu .nav-link {
+        justify-content: flex-start;
+        padding: 10px 12px;
+    }
+
+    .nav-menu .cart-link,
+    .nav-menu .profile-link {
+        justify-content: flex-start;
+    }
+}
+
+/* ===== Halaman struk ===== */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: #242424;
+    background: var(--green);
+    font-family: 'Bricolage Grotesque', Arial, sans-serif;
+}
+
+/* Bayangan tipis di bawah navbar sesuai desain */
+.custom-navbar {
+    box-shadow: 0 2px 4px rgb(0 0 0 / 22%);
+}
+
+.struk-halaman {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-height: calc(100vh - 76px);
+    padding: 40px 16px;
+}
+
+/* Struk berupa kartu putih di tengah, di atas latar hijau (sesuai desain) */
+.struk {
+    width: 100%;
+    max-width: 380px;
+    padding: 28px 26px 28px;
+    border-radius: 24px;
+    color: #111;
+    background: #fff;
+    box-shadow: 0 6px 18px rgb(0 0 0 / 18%);
+}
+
+.struk h1 {
+    margin: 0 0 14px;
+    color: #111;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+}
+
+.struk h1 span {
+    display: block;
+    margin-top: 2px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.struk hr {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #aaa;
+    opacity: 1;
+}
+
+.struk-baris {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 4px 0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.struk-baris span:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.struk-judul {
+    margin: 0 0 6px;
+    font-size: 12px;
+}
+
+.struk-penutup,
+.struk-ulasan p {
+    margin: 4px 0 0;
+    font-size: 11px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.struk-ulasan {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.struk-ulasan img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 8px auto 0;
+    object-fit: contain;
+}
+
+.struk-memuat,
+.struk-pesan p {
+    margin: 0;
+    font-size: 13px;
+    text-align: center;
+}
+
+.struk-pesan {
+    padding: 28px 22px;
+    border-radius: 24px;
+}
+
+.struk-link {
+    display: block;
+    margin-top: 12px;
+    color: var(--green);
+    font-size: 13px;
+    text-align: center;
+}

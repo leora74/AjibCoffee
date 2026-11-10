@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang | Ajib Coffee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../CSS/keranjang.css">
+</head>
+<body>
+<div class="cart-page">
+    <nav class="navbar navbar-expand-md navbar-light custom-navbar">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand brand-logo" href="main.html" aria-label="Ajib Coffee - Home">
+                <img src="../ASSETS/img/ajib_logo2.png" alt="Logo Ajib Coffee">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAjib" aria-controls="navbarAjib" aria-expanded="false" aria-label="Buka navigasi">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarAjib">
+                <ul class="navbar-nav ms-auto align-items-md-center nav-menu">
+                    <li class="nav-item"><a class="nav-link" href="main.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about_us.html">Tentang Kami</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-link active" href="keranjang.html" aria-current="page" aria-label="Keranjang">
+                            <i class="bi bi-cart3"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link profile-link" href="profile.html" aria-label="Profil akun">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="cart-main">
+        <div class="cart-list" id="cartList">
+            <div class="cart-loading">
+                <div class="spinner-border spinner-border-sm" role="status"></div>
+                <span>Memuat keranjang...</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="checkout-bar" id="checkoutBar" aria-label="Ringkasan keranjang" hidden>
+        <label class="select-all">
+            <input type="checkbox" id="selectAll" checked>
+            <span>Check out semua</span>
+        </label>
+        <div class="checkout-summary">
+            <span class="checkout-total" id="selectedTotal">Rp 0</span>
+            <span class="total-caret"><i class="bi bi-chevron-up"></i></span>
+        </div>
+        <button type="button" class="checkout-button" id="checkoutButton" disabled>
+            Check out (<span id="selectedCount">0</span>)
+        </button>
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../JAVASCRIPT/keranjang.js"></script>
+</body>
+</html>
