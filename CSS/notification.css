@@ -68,41 +68,37 @@
 }
 
 /* =========================================
-   CUSTOM NAVBAR: TOMBOL DASHBOARD & NOTIFIKASI
+   NAVBAR NOTIFICATION
    ========================================= */
 
-/* Pastikan Dashboard biasa tidak punya background hijau di halaman ini */
-.nav-dashboard {
-  background-color: transparent !important;
-  color: #1C4630 !important;
-  border-radius: 8px;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+/* Dashboard tetap normal */
+.nav-menu .btn-register-nav {
+    background: transparent;
+    color: #000;
 }
 
-.nav-dashboard:hover {
-  background-color: rgba(28, 70, 48, 0.1);
+/* Efek hover Dashboard */
+.nav-menu .btn-register-nav:hover {
+    color: var(--green);
 }
 
-/* Ubah tombol Ikon Notifikasi aktif menjadi bentuk kapsul hijau menyerupai tombol Dashboard */
-.icon-button#notificationButton.active {
-  background-color: #1C4630 !important;
-  color: #ffffff !important;
-  border-radius: 8px !important;
-  padding: 8px 16px !important;
-  width: auto !important;
-  height: auto !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+/* Notifikasi aktif */
+.nav-menu .icon-nav-button.active {
+    background: var(--green);
+    color: #fff;
 }
 
-.icon-button#notificationButton.active svg {
-  width: 20px;
-  height: 20px;
-  fill: #ffffff;
-  stroke: #ffffff;
+/* Ikon notifikasi aktif */
+.nav-menu .icon-nav-button.active svg {
+    stroke: #fff;
+}
+
+/* Efek hover ikon */
+.nav-menu .icon-nav-button:hover {
+    color: var(--green);
+}
+
+/* Ikon notifikasi aktif tetap putih saat hover */
+.nav-menu .icon-nav-button.active:hover {
+    color: #fff;
 }
