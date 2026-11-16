@@ -70,7 +70,7 @@ try {
     $_SESSION['username'] = $pelanggan['username'];
 
     // Login berhasil
-    header('Location: ../HTML/main.html');
+    header('Location: ../HTML/main.html?status=success');
     exit;
 
 } catch (Throwable $e) {

@@ -94,7 +94,7 @@ try {
     );
 
     // Arahkan pelanggan ke halaman login
-    header('Location: ../HTML/login.html?status=register_success');
+    header('Location: ../index.html?status=register_success');
     exit;
 
 } catch (Throwable $e) {

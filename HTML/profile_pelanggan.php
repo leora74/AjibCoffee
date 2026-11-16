@@ -58,10 +58,10 @@ if ($result->num_rows > 0) {
         <a class="nav-link" href="main.html">Beranda</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="about.php">Tentang kami</a>
+        <a class="nav-link" href="about.php">Tentang</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link cart-link" href="cart.php" aria-label="Keranjang belanja">
+        <a class="nav-link cart-link" href="keranjang." aria-label="Keranjang belanja">
           <i class="bi bi-cart3"></i>
         </a>
       </li>
@@ -131,7 +131,7 @@ if ($result->num_rows > 0) {
 
         <!-- Logout Button -->
         <div class="logout-btn-container">
-          <a href="logout.php" class="logout-btn">
+          <a href="../PHP/loadLogout.php" class="logout-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
             </svg>
