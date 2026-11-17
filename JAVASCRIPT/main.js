@@ -1,5 +1,7 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll(".nav-link");
+
     navLinks.forEach((link) => {
         link.addEventListener("click", () => {
             navLinks.forEach((item) => item.classList.remove("active"));
@@ -7,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-        // ===== Fungsi Searchbar =====
+    // ===== Fungsi Searchbar =====
 
     const menuSearch = document.getElementById("menuSearch");
     const menuItems = document.querySelectorAll(".menu-group li");
@@ -41,13 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // ===== Notifikasi Login =====
+
     const params = new URLSearchParams(window.location.search);
+
     if (params.get("status") === "success") {
         alert("Login berhasil! Selamat datang.");
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 
-    // Tombol Buy selalu menuju halaman detail berdasarkan ID menu.
+    // ===== Tombol Buy =====
+
     document.querySelectorAll(".buy-button[data-menu-id]").forEach((button) => {
         button.addEventListener("click", () => {
             const idMenu = button.dataset.menuId;

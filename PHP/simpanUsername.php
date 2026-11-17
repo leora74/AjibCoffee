@@ -93,9 +93,9 @@ try {
         $_SESSION['register_password']
     );
 
-    // Arahkan pelanggan ke halaman login
-    header('Location: ../index.html?status=register_success');
-    exit;
+   // Arahkan pelanggan ke halaman login
+header('Location: ../HTML/login.html?status=register_success');
+exit;
 
 } catch (Throwable $e) {
 

@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const locationInput = document.getElementById('lokasi_pengantaran');
     const detailInput = document.getElementById('detail_lokasi');
     const serviceInputs = document.querySelectorAll('input[name="jenis_layanan"]');
+
+document.addEventListener('DOMContentLoaded', () => {
+    const deliveryFields = document.getElementById('deliveryFields');
+    const locationInput = document.getElementById('lokasi_pengantaran');
+    const detailInput = document.getElementById('detail_lokasi');
+    const serviceInputs = document.querySelectorAll('input[name="jenis_layanan"]');
+
     const deliveryOption = document.querySelector('input[name="jenis_layanan"][value="Delivery"]');
     const pickupOption = document.querySelector('input[name="jenis_layanan"][value="Pick Up"]');
     const deliveryTersedia = window.deliveryTersedia ?? false;
@@ -13,13 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateService() {
-        const selected = document.querySelector('input[name="jenis_layanan"]:checked')?.value || (deliveryTersedia ? 'Delivery' : 'Pick Up');
-        const isDelivery = deliveryTersedia && selected === 'Delivery';
+        const selected = document.querySelector('input[name="jenis_layanan"]:checked')?.value
+            || (deliveryTersedia ? 'Delivery' : 'Pick Up');
 
-        if (!deliveryTersedia && deliveryOption && deliveryOption.checked) {
-            deliveryOption.checked = false;
-            if (pickupOption) pickupOption.checked = true;
-        }
+        const isDelivery = deliveryTersedia && selected === 'Delivery';
 
         if (!deliveryTersedia && pickupOption) {
             pickupOption.checked = true;
@@ -40,7 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    serviceInputs.forEach((input) => input.addEventListener('change', updateService));
+    serviceInputs.forEach((input) => {
+        input.addEventListener('change', updateService);
+    });
 
     if (!deliveryTersedia && pickupOption) {
         pickupOption.checked = true;
@@ -49,9 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateService();
 
     const phone = document.getElementById('no_telepon_penerima');
+
     if (phone) {
         phone.addEventListener('input', () => {
             phone.value = phone.value.replace(/[^0-9+]/g, '');
         });
     }
+});
+
 });

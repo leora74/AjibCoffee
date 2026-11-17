@@ -377,15 +377,17 @@ body {
     text-align: right;
     font-size: small;
     margin-right: 30px;
-    margin-top: 0px;
+    margin-top: 0;
 }
-.lupapw a{
+
+.lupapw a {
     color: var(--green);
     font-weight: 700;
     text-decoration: none;
     font-size: x-small;
 }
-.lupapw a:hover{
+
+.lupapw a:hover {
     text-decoration: underline;
 }
 
@@ -599,10 +601,4 @@ body {
     .card-heading h2 {
         font-size: 18px;
     }
-}
-
-.footer.bottom {
-    color: #000;
-    text-align: center;
-    background-color: #163d30;
 }

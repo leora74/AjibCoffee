@@ -1,3 +1,4 @@
+
 /* =========================================
    STYLING HALAMAN NOTIFIKASI
    ========================================= */
@@ -73,32 +74,32 @@
 
 /* Dashboard tetap normal */
 .nav-menu .btn-register-nav {
-    background: transparent;
-    color: #000;
+  background: transparent;
+  color: #000;
 }
 
 /* Efek hover Dashboard */
 .nav-menu .btn-register-nav:hover {
-    color: var(--green);
+  color: var(--green);
 }
 
 /* Notifikasi aktif */
 .nav-menu .icon-nav-button.active {
-    background: var(--green);
-    color: #fff;
+  background: var(--green);
+  color: #fff;
 }
 
 /* Ikon notifikasi aktif */
 .nav-menu .icon-nav-button.active svg {
-    stroke: #fff;
+  stroke: #fff;
 }
 
 /* Efek hover ikon */
 .nav-menu .icon-nav-button:hover {
-    color: var(--green);
+  color: var(--green);
 }
 
 /* Ikon notifikasi aktif tetap putih saat hover */
 .nav-menu .icon-nav-button.active:hover {
-    color: #fff;
+  color: #fff;
 }

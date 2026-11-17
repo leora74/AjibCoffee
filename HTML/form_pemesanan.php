@@ -64,7 +64,11 @@ $discount = 0;
 $total = max(0, $subtotal - $discount);
 $status = $_GET['status'] ?? '';
 $old = $_SESSION['data_pemesanan'] ?? [];
-$totalItemPesanan = array_sum(array_map(static fn($item) => (int)($item['jumlah'] ?? 0), $items));
+$totalItemPesanan = array_sum(array_map(
+    static fn($item) => (int)($item['jumlah'] ?? 0),
+    $items
+));
+
 $deliveryTersedia = $totalItemPesanan >= 10;
 ?>
 <!DOCTYPE html>
@@ -97,25 +101,42 @@ $deliveryTersedia = $totalItemPesanan >= 10;
     <main class="order-main">
         <form class="order-form" action="../PHP/simpan_form_pemesanan.php" method="post" id="orderForm">
             <section class="customer-section">
-                <h1 style="margin-left: 25%;"><i class="bi bi-info-circle"></i> Informasi Pengiriman</h1>
-                <p style="font-size: small; opacity:50%;">Layanan delivery minimal 10 item</p>
-                
-                <div class="service-switch" role="group" aria-label="Jenis layanan">
-                    <label class="service-option" id="deliveryOption">
-                        <input
-                            type="radio"
-                            name="jenis_layanan"
-                            value="Delivery"
-                            <?= !$deliveryTersedia ? 'disabled' : '' ?>
-                            <?= (($old['jenis_layanan'] ?? '') === 'Delivery' && $deliveryTersedia) ? 'checked' : '' ?>
-                        >
-                        <span>
-                            <i class="bi bi-truck"></i> Delivery
-                        </span>
-                    </label>
 
-                    <label class="service-option">
-                        <input type="radio" name="jenis_layanan" value="Pick Up" <?= (($old['jenis_layanan'] ?? '') === 'Pick Up' || !$deliveryTersedia) ? 'checked' : '' ?>>
+<h1><i class="bi bi-info-circle"></i> Informasi Pengiriman</h1>
+
+<p style="font-size: small; opacity: 50%;">
+    Layanan delivery minimal 10 item
+</p>
+
+<div class="service-switch" role="group" aria-label="Jenis layanan">
+
+    <label class="service-option" id="deliveryOption">
+        <input
+            type="radio"
+            name="jenis_layanan"
+            value="Delivery"
+            <?= !$deliveryTersedia ? 'disabled' : '' ?>
+            <?= (($old['jenis_layanan'] ?? '') === 'Delivery' && $deliveryTersedia) ? 'checked' : '' ?>
+        >
+        <span>
+            <i class="bi bi-truck"></i> Delivery
+        </span>
+    </label>
+
+    <label class="service-option">
+        <input
+            type="radio"
+            name="jenis_layanan"
+            value="Pick Up"
+            <?= (($old['jenis_layanan'] ?? '') === 'Pick Up' || !$deliveryTersedia) ? 'checked' : '' ?>
+        >
+        <span>
+            <i class="bi bi-shop"></i> Pick Up
+        </span>
+    </label>
+
+</div>
+
                         <span><i class="bi bi-shop"></i> Pick Up</span>
                     </label>
                 </div>
@@ -179,8 +200,8 @@ $deliveryTersedia = $totalItemPesanan >= 10;
 <script>
     window.deliveryTersedia = <?= json_encode((bool) $deliveryTersedia) ?>;
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../JAVASCRIPT/form_pemesanan.js"></script>
-
 </body>
 </html>
