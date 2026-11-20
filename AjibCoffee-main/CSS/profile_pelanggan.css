@@ -1,0 +1,422 @@
+/* ==========================================
+   FONT & VARIABLE DEFINITION
+   ========================================== */
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('../ASSETS/font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+    font-style: normal;
+}
+
+:root {
+    --green: #245743;
+    --green-dark: #1f4838;
+    --green-card-bg: rgba(255, 255, 255, 0.22);
+    --page-bg: #1f4838;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--page-bg);
+    color: #333;
+    font-family: 'Bricolage Grotesque', Arial, sans-serif;
+}
+
+/* ==========================================
+   NAVBAR STYLE (KAPSUL NAVIGASI)
+   ========================================== */
+
+.custom-navbar {
+    width: 100%;
+    min-height: 72px;
+    padding: 12px 40px; /* Spacing kanan & kiri seimbang */
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+}
+
+/* Kapsul Luar Pembungkus Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px 4px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #ffffff;
+    list-style: none;
+    margin: 0;
+}
+
+/* Tautan Navigasi Teks */
+.nav-menu .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 10px;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 400; /* Font normal, tidak bold */
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.nav-menu .nav-link:hover {
+    color: #235d47;
+}
+
+/* State Menu Aktif (Tombol Hijau Melengkung Teks Putih) */
+.nav-menu .nav-link.active {
+    color: #ffffff;
+    background: #235d47; /* Warna Hijau Tua Presisi */
+    font-weight: 400; /* Teks tetap normal */
+}
+
+/* Icon Links (Keranjang & Profil) */
+.nav-menu .cart-link,
+.nav-menu .profile-link {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.nav-menu .cart-link i,
+.nav-menu .profile-link i {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.nav-menu .cart-link.active,
+.nav-menu .profile-link.active {
+    background: #235d47;
+    color: #ffffff;
+}
+
+.nav-menu .cart-link:hover,
+.nav-menu .profile-link:hover {
+    color: #235d47;
+}
+/* ==========================================
+   LAYOUT KARTU PROFIL UTAMA
+   ========================================== */
+.profile-page-wrapper {
+    width: 100%;
+    min-height: calc(100vh - 76px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.profile-card-container {
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    background: var(--green-card-bg);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 0px 100px 100px 0px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6px);
+    margin: auto;
+}
+
+/* PANEL KIRI: Putih Atap Melengkung */
+.profile-left-panel {
+    width: 300px;
+    background: #ffffff;
+    border-radius: 130px 130px 0 0;
+    padding: 20px 24px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+}
+
+/* Foto Profil Frame Hijau */
+.avatar-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    border: 6px solid var(--green-dark);
+    padding: 4px;
+    background: #fff;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b7c4be;
+    font-size: 112px;
+}
+
+.avatar-file-input {
+    display: none;
+}
+
+.edit-avatar-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    background: var(--green-dark);
+    border: 2px solid #fff;
+    border-radius: 6px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+.edit-avatar-btn:hover {
+    background: var(--green);
+}
+
+.avatar-message {
+    width: 100%;
+    margin: -12px 0 18px;
+    color: var(--green-dark);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Input Form Fields */
+.profile-field-group {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.profile-field-group label {
+    display: block;
+    font-size: 13px;
+    color: #999999;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.field-input-box {
+    background: var(--green-dark);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.field-input-box span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.field-input-box button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.field-input-box button:hover {
+    opacity: 1;
+}
+
+.phone-edit-form {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    background: var(--green-dark);
+    border-radius: 20px;
+}
+
+.phone-edit-form[hidden] {
+    display: none;
+}
+
+.phone-edit-form input {
+    min-width: 0;
+    width: 100%;
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 14px;
+    outline: none;
+    background: #fff;
+    color: var(--green-dark);
+    font: inherit;
+}
+
+.phone-edit-form button {
+    flex-shrink: 0;
+    padding: 5px 8px;
+    border: 0;
+    border-radius: 12px;
+    background: #fff;
+    color: var(--green-dark);
+    font: inherit;
+    cursor: pointer;
+}
+
+.phone-edit-form .phone-save-btn {
+    font-weight: 700;
+}
+
+.phone-message {
+    margin: 5px 4px 0;
+    color: var(--green-dark);
+    font-size: 12px;
+}
+
+/* Tombol Logout */
+.logout-btn-container {
+    margin-top: 15px;
+    border-top: 1px solid #eeeeee;
+    width: 100%;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: #ff3b30;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* PANEL KANAN: Menu Opsi Hijau Transparan */
+.profile-right-panel {
+    flex: 1;
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-right-panel h1 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.5px;
+}
+
+.profile-divider {
+    width: 100%;
+    max-width: 500px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 35px;
+}
+
+.profile-menu-options {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.option-btn {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--green-dark);
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.option-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.option-btn .icon-box {
+    display: flex;
+    align-items: center;
+    color: var(--green-dark);
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+@media (max-width: 900px) {
+    .profile-card-container {
+        flex-direction: column;
+        border-radius: 40px;
+    }
+    
+    .profile-left-panel {
+        width: 100%;
+        border-radius: 40px 40px 0 0;
+    }
+
+    .custom-navbar {
+        padding: 12px 20px;
+    }
+
+    .profile-right-panel {
+        padding: 40px 20px;
+    }
+}

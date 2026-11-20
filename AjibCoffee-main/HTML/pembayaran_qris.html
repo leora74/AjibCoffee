@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran QRIS | Ajib Coffee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../CSS/pembayaran.css">
+</head>
+<body class="halaman-bayar halaman-qris">
+    <header class="band-hijau">
+        <div class="band-isi">
+            <a class="avatar-link" href="profile.html" aria-label="Profil akun">
+                <i class="bi bi-person-circle"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="bayar-wrap">
+        <section class="kartu-total mendatar" aria-label="Ringkasan pembayaran">
+            <div class="kartu-kiri">
+                <div class="total-baris">
+                    <span class="total-label">Total</span>
+                    <span class="total-nilai" id="totalBayar">Rp -</span>
+                </div>
+                <div class="order-id">Order ID <span id="kodeOrder">#-</span></div>
+            </div>
+            <div class="kartu-kanan">
+                <span class="bayar-dalam">Bayar dalam</span>
+                <span class="hitung-mundur" id="hitungMundur" aria-live="off">00.00.00</span>
+            </div>
+        </section>
+
+        <div id="pesanHalaman" role="alert" hidden></div>
+
+        <section class="qris-isi" aria-label="Kode QRIS">
+            <div class="qris-kiri">
+                <img src="../ASSETS/img/Logo kopkar.jpeg" alt="Ajib Coffee Kopkar Polindra">
+            </div>
+
+            <div class="qris-tengah">
+                <div class="logo-qris" id="logoQris"></div>
+                <div class="qr-kotak" id="blokQr">
+                    <p class="qr-memuat">Memuat kode QRIS...</p>
+                </div>
+                <p class="nmid" id="nmid" hidden></p>
+                <button type="button" class="tombol-status" id="btnStatus">Lihat Status Pembayaran</button>
+                <p class="info-status" id="infoStatus" role="status"></p>
+            </div>
+
+            <div class="qris-kanan" aria-hidden="true"></div>
+        </section>
+    </main>
+
+    <script src="../JAVASCRIPT/bayar_umum.js"></script>
+    <script src="../JAVASCRIPT/pembayaran_qris.js"></script>
+</body>
+</html>

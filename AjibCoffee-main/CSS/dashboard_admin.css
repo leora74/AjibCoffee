@@ -1,0 +1,513 @@
+
+/* =========================
+   FONT
+========================= */
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('../ASSETS/font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf')
+         format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+/* =========================
+   ROOT
+========================= */
+
+:root {
+    --green: #285d49;
+    --green-dark: #1e4b3b;
+    --cream: #f2e7d2;
+    --page-bg: #f4f4f2;
+    --text-dark: #262626;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--text-dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   DASHBOARD PAGE
+========================= */
+
+.dashboard-page {
+    width: 100%;
+    max-width: 1500px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+/* =========================
+   NAVBAR DASHBOARD
+========================= */
+
+.custom-navbar {
+    width: 100%;
+    min-height: 76px;
+    padding: 8px 0;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+    border-bottom: none;
+}
+
+.custom-navbar .container-fluid {
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.brand-logo img {
+    display: block;
+    width: 66px;
+    height: 56px;
+    object-fit: contain;
+}
+
+/* Menu navbar */
+
+.nav-menu {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    border: 1px solid #e7e7e7;
+    border-radius: 11px;
+}
+
+.nav-menu .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    color: #252525;
+    font-size: 14px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    transition: color 0.2s ease;
+}
+
+.nav-menu .nav-link:hover {
+    color: var(--green);
+}
+
+/* Dashboard aktif */
+
+.btn-register-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #000;
+    font-size: 14px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    text-decoration: none;
+}
+
+.btn-register-nav.active,
+.btn-register-nav.active:hover,
+.btn-register-nav.active:focus {
+    background: var(--green);
+    color: #fff;
+}
+
+/* Notifikasi dan profil */
+
+.icon-nav-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 8px !important;
+    border: none;
+    background: transparent;
+    color: #252525;
+    font-size: 20px !important;
+    cursor: pointer;
+}
+
+.icon-nav-button i {
+    font-size: 20px;
+}
+
+.icon-nav-button:hover {
+    color: var(--green);
+}
+
+.notification-dot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #e66d5d;
+    border: 1px solid #fff;
+}
+
+/* Menu notifikasi dan profil */
+
+.small-menu {
+    position: absolute;
+    z-index: 20;
+    right: 25px;
+    top: 78px;
+    width: 220px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px #0002;
+    font-size: 12px;
+}
+
+.small-menu p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.small-menu button {
+    border: 0;
+    background: var(--green);
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px 10px;
+}
+
+.profile-menu {
+    right: 15px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* =========================
+   DASHBOARD CONTENT
+========================= */
+
+.dashboard-content {
+    padding: 10px 4% 40px;
+}
+
+/* =========================
+   RINGKASAN DASHBOARD
+========================= */
+
+.summary-section {
+    background-color: var(--green);
+    padding: 38px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7%;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card {
+    background: #fff;
+    border-radius: 17px;
+    min-height: 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    text-align: center;
+}
+
+.summary-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.summary-heading i {
+    font-size: 27px;
+    color: #111;
+}
+
+.summary-card h3 {
+    font-size: 27px;
+    margin: 0 0 5px;
+    color: #111;
+}
+
+.summary-card p {
+    color: #f04438;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* =========================
+   GRAFIK PENJUALAN
+========================= */
+
+.sales-section {
+    background: #f0f0f0;
+    border-radius: 9px;
+    padding: 18px;
+}
+
+.sales-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.sales-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.sales-header select {
+    padding: 8px 15px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    background: transparent;
+    min-width: 180px;
+}
+
+.chart-message {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+/* Area grafik */
+
+.chart-wrapper {
+    display: flex;
+    height: 320px;
+    gap: 15px;
+    padding: 10px 5px;
+}
+
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 55px;
+    padding-bottom: 25px;
+    font-size: 12px;
+    color: #555;
+}
+
+.bar-group {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 12px;
+    border-bottom: 1px solid #aaa;
+}
+
+.bar-column {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.bar {
+    width: min(75%, 75px);
+    min-height: 0;
+    background: var(--green);
+    border-radius: 6px 6px 0 0;
+    transition: height 0.3s ease;
+}
+
+.bar-column span {
+    font-size: 12px;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* Footer grafik */
+
+.sales-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 12px 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.sales-footer strong {
+    color: #111;
+    margin-left: 5px;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 767.98px) {
+
+    .custom-navbar {
+        min-height: 68px;
+        padding: 6px 0;
+    }
+
+    .custom-navbar .container-fluid {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .brand-logo img {
+        width: 58px;
+        height: 50px;
+    }
+
+    .nav-menu {
+        align-items: stretch !important;
+        gap: 0;
+        margin-top: 10px;
+        padding: 8px;
+        border: 0;
+        border-radius: 8px;
+        background: #fff;
+    }
+
+    .nav-menu .nav-link {
+        justify-content: flex-start;
+        padding: 10px 12px;
+    }
+
+    .nav-menu .icon-nav-button {
+        justify-content: flex-start;
+        width: 100%;
+        height: 42px;
+    }
+
+    .btn-register-nav {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .small-menu {
+        top: 75px;
+        right: 12px;
+    }
+
+    .dashboard-content {
+        padding: 15px;
+    }
+
+    .summary-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .sales-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .chart-wrapper {
+        height: 260px;
+        gap: 8px;
+    }
+
+    .bar-group {
+        gap: 5px;
+    }
+
+    .bar-column span {
+        font-size: 10px;
+    }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .custom-navbar {
+        padding: 6px 4px;
+    }
+
+    .custom-navbar .container-fluid {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .dashboard-content {
+        padding: 15px;
+    }
+
+    .summary-section {
+        padding: 18px;
+    }
+
+    .summary-card {
+        min-height: 125px;
+    }
+
+    .sales-section {
+        padding: 14px;
+    }
+
+    .sales-header select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .chart-wrapper {
+        height: 240px;
+        gap: 6px;
+        padding: 10px 2px;
+    }
+
+    .y-axis {
+        min-width: 42px;
+        font-size: 10px;
+    }
+
+    .bar-group {
+        gap: 4px;
+    }
+
+    .bar-column span {
+        font-size: 9px;
+    }
+
+    .sales-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
