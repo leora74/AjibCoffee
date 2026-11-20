@@ -160,12 +160,12 @@ body {
 .field-group label {
     display: block;
     margin: 0 0 5px 3px;
-    color: #fff;
+    color: var(--green);
     font-size: 12px;
 }
 
 .field-group label span {
-    color: #ffb2a7;
+    color: var(--green);
 }
 
 .field-group input,
@@ -178,7 +178,7 @@ body {
     border: 1px solid transparent;
     border-radius: 999px;
     outline: 0;
-    background: #d6d6d6;
+    background: var(--green);
     color: #25342d;
     font: inherit;
     font-size: 12px;
@@ -193,7 +193,7 @@ body {
 .field-group input:focus,
 .field-group textarea:focus {
     border-color: #f2e7d2;
-    background: #fff;
+    background: #969696;
     box-shadow: 0 0 0 3px rgba(242, 231, 210, 0.18);
 }
 
