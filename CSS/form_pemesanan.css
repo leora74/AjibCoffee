@@ -165,7 +165,7 @@ body {
 }
 
 .field-group label span {
-    color: var(--green);
+    color: #969696;
 }
 
 .field-group input,
